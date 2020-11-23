@@ -1,5 +1,5 @@
 class Deal < ApplicationRecord
   belongs_to :user
   belongs_to :product
-  has_many :users, through: :products
+  has_one :owner, through: :product
 end
