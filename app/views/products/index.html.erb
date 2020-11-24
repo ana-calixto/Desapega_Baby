@@ -1,10 +1,22 @@
 
 <h1>Produtos</h1>
 <% @products.each do |product| %>
-<%= product.name %>
-<%= product.brand %>
-<%= product.description %>
-<%= product.price %>
+  <p>
+  <%= product.name %>
+  <%= product.brand %>
+  <%= product.description %>
+  <%= product.price %>
+  <%= link_to "Ver produto", product_path(product) %>
+  </p>
 <% end  %>
 
-<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+
+<%= link_to "Home", root_path %>
+
+
+<%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+<!-- >>>>>>> bc13062047583a53e2c0894bb1ffe59154779707 -->
+
+<%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+<!-- >>>>>>> 49c616ca987e945c222b1d38fe2fae2895e835cb
+ -->
