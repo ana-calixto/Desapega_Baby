@@ -13,7 +13,7 @@ class DealsController < ApplicationController
     @deal.user = current_user
     @deal.product = @product
     @deal.save!
-    redirect_to products_path
+    redirect_to deal_path(@deal)
   end
 
 end
