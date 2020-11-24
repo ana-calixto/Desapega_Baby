@@ -35,8 +35,12 @@ class ProductsController < ApplicationController
   end 
   
   def destroy
+    if @product.owner == current_user
     @product.destroy
-    redirect_to products_path 
+    redirect_to products_path, notice: 'Produto excluído com sucesso'
+    else
+    redirect_to products_path, alert: 'Não autorizado'
+    end
   end
 
   private
