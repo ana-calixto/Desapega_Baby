@@ -4,7 +4,12 @@
 <%= @product.brand %>
 <%= @product.description %>
 <%= @product.price %>
-<%= link_to 'comprar', new_product_deal_path(@product), class: 'btn btn-primary' %>
+<%= link_to 'comprar', product_deals_path(@product), method: :post, class: 'btn btn-primary' %>
 
 <%= link_to "Home", root_path %>
 
+<%= link_to "Editar", edit_product_path %>
+
+<%= link_to "Excluir", @product, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<p> <%= link_to "Back", :back %>  </p>
