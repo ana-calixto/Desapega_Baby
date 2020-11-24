@@ -8,10 +8,10 @@
   <h1 class="logo">Desapega Baby</h1>
   <ul class="main-nav" id="js-menu">
     <li>
-        <p class="nav-links">Home</p>
+        <p class="nav-links"> <%= link_to "Home", root_path %> </p>
     </li>
     <li>
-        <p class="nav-links">Produtos</p>
+        <p class="nav-links"> <%= link_to "Produtos", products_path  %> </p>
     </li>
     <li>
         <p class="nav-links">Vendedores</p>
@@ -20,7 +20,7 @@
         <p class="nav-links">Fale Conosco</p>
     </li>
     <li>
-        <p class="nav-links">Sing Out</p>
+        <p class="nav-links"> <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %> </p>
     </li>
   </ul>
 </div>
