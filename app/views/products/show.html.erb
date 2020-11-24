@@ -11,8 +11,8 @@
             <p class="card-text"><%= @product.description %></p>
             <p class="card-text"><h3 class="text-muted">R$<%= @product.price %></h3></p>
           </div>
-          <%= link_to 'comprar', product_deals_path(@product), method: :post, class: 'btn btn-primary' %>
-          <%= link_to "Back", :back, class: 'btn btn-primary' %>
+          <%= link_to 'Comprar', product_deals_path(@product), method: :post, class: 'btn btn-primary' %>
+          <%= link_to "Voltar", :back, class: 'btn btn-primary' %>
         </div>
     </div>
   </div>
@@ -22,11 +22,8 @@
 
 <%= link_to "Editar", edit_product_path, class: 'btn btn-primary' %>
 
-<%= link_to "Excluir", method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+<% if @product.owner == current_user%>
+<%= link_to "Excluir", @product, method: :delete, data: { confirm: 'Tem certeza que deseja excluir esse produto?' }, class: 'btn btn-primary' %>
+<% end %>
 
-
-<p>   </p>
-
-<%= link_to "Excluir", @product, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-<p> <%= link_to "Back", :back %>  </p>
+<p> <%= link_to "Voltar", :back %>  </p>

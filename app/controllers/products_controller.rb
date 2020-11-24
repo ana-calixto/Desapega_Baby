@@ -1,5 +1,8 @@
 class ProductsController < ApplicationController
-  before_action :product_find, only: [:show, :edit, :update, :destroy]
+
+  skip_before_action :authenticate_user!, only: :index
+  before_action :product_find, only: [:show, :edit, :update, :destroy] 
+
 
   def index
     @products = Product.all.where(available: true)
@@ -35,8 +38,14 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    if @product.owner == current_user
     @product.destroy
-    redirect_to products_path
+
+    redirect_to products_path, notice: 'Produto excluído com sucesso'
+    else
+    redirect_to products_path, alert: 'Não autorizado'
+    end
+
   end
 
   private
