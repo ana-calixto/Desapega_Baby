@@ -1,14 +1,31 @@
-<p>Show</p>
+<div class="container-card">
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="..." class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%= @product.name %></h5>
+            <p class="card-text"><%= @product.brand %></p>
+            <p class="card-text"><%= @product.description %></p>
+            <p class="card-text"><h3 class="text-muted">R$<%= @product.price %></h3></p>
+          </div>
+          <%= link_to 'comprar', product_deals_path(@product), method: :post, class: 'btn btn-primary' %>
+          <%= link_to "Back", :back, class: 'btn btn-primary' %>
+        </div>
+    </div>
+  </div>
+</div>
 
-<%= @product.name %>
-<%= @product.brand %>
-<%= @product.description %>
-<%= @product.price %>
-<%= link_to 'comprar', product_deals_path(@product), method: :post, class: 'btn btn-primary' %>
+<%= link_to "Home", root_path, class: 'btn btn-primary' %>
 
-<%= link_to "Home", root_path %>
+<%= link_to "Editar", edit_product_path, class: 'btn btn-primary' %>
 
-<%= link_to "Editar", edit_product_path %>
+<%= link_to "Excluir", method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+
+
+<p>   </p>
 
 <%= link_to "Excluir", @product, method: :delete, data: { confirm: 'Are you sure?' } %>
 
