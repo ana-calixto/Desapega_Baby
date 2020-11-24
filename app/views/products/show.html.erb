@@ -4,6 +4,11 @@
 <%= @product.brand %>
 <%= @product.description %>
 <%= @product.price %>
+<% @product.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400 %>
+<% end %>
+
+
 <%= link_to 'comprar', product_deals_path(@product), method: :post, class: 'btn btn-primary' %>
 
 <%= link_to "Home", root_path %>
