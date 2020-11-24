@@ -10,6 +10,6 @@
 
 <%= link_to "Editar", edit_product_path %>
 
-<%= link_to "Excluir", method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to "Excluir", @product, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <p> <%= link_to "Back", :back %>  </p>
