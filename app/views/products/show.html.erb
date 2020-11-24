@@ -4,7 +4,7 @@
 <%= @product.brand %>
 <%= @product.description %>
 <%= @product.price %>
-<%= link_to 'comprar', new_product_deal_path(@product), class: 'btn btn-primary' %>
+<%= link_to 'comprar', product_deals_path(@product), method: :post, class: 'btn btn-primary' %>
 
 <%= link_to "Home", root_path %>
 
