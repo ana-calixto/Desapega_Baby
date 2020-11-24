@@ -24,4 +24,9 @@
 
 <%= link_to "Excluir", method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
 
+
 <p>   </p>
+
+<%= link_to "Excluir", @product, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<p> <%= link_to "Back", :back %>  </p>
