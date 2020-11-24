@@ -33,10 +33,10 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
-let mainNav = document.getElementById('js-menu');
-let navBarToggle = document.getElementById('js-navbar-toggle');
+const mainNav = document.getElementById('js-menu');
+const navBarToggle = document.getElementById('js-navbar-toggle');
 
 navBarToggle.addEventListener('click', function () {
-
-    mainNav.classList.toggle('active');
+  mainNav.classList.toggle('active');
 });
+
