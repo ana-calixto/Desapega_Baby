@@ -1,6 +1,6 @@
 class DealsController < ApplicationController
-  def index 
-    @deals = Deal.all 
+  def index
+    @deals = Deal.all
   end
 
   def show
@@ -15,5 +15,4 @@ class DealsController < ApplicationController
     @deal.save!
     redirect_to deal_path(@deal)
   end
-
 end
