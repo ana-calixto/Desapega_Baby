@@ -7,16 +7,12 @@ class DealsController < ApplicationController
     @deal = Deal.find(params[:id])
   end
 
-  def new
-    @deal = Deal.new
-  end
-
   def create
     @deal = Deal.new
-    @product = Product.find(:id)
+    @product = Product.find(params[:product_id])
     @deal.user = current_user
     @deal.product = @product
-    @deal.save
+    @deal.save!
     redirect_to products_path
   end
 
