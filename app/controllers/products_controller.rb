@@ -1,8 +1,11 @@
 class ProductsController < ApplicationController
-  before_action :product_find, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: :index
+  before_action :product_find, only: [:show, :edit, :update, :destroy] 
+
 
   def index
-    @products = Product.all.page params[:page]
+    @products = Product.all.where(available: true).page params[:page]
+
   end
 
   def show
@@ -35,8 +38,12 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    if @product.owner == current_user
     @product.destroy
-    redirect_to products_path
+    redirect_to products_path, notice: 'Produto excluído com sucesso'
+    else
+    redirect_to products_path, alert: 'Não autorizado'
+    end
   end
 
   private
@@ -45,7 +52,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  def product_params
-    params.require(:product).permit(:name, :description, :brand, :price)
+  def product_params 
+    params.require(:product).permit(:name, :description, :brand, :price, photos: [])
   end
 end
