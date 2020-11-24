@@ -1,3 +1,4 @@
+<%= render 'shared/products' %>
 
 <h1>Produtos</h1>
 <% @products.each do |product| %>
@@ -11,6 +12,9 @@
 <% end  %>
 
 
+
+<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+
 <%= link_to "Home", root_path %>
 
 
@@ -20,3 +24,4 @@
 <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
 <!-- >>>>>>> 49c616ca987e945c222b1d38fe2fae2895e835cb
  -->
+
