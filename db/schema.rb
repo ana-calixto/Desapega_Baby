@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 2020_11_24_195500) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "available", default: true
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
