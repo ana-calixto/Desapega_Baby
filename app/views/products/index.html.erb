@@ -1,28 +1,17 @@
 <div class="container">
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-      <% @products.each do |product| %>
-        <div class="col-md-4">
-          <img src="..." class="card-img" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title"><%= product.name %></h5>
-            <p class="card-text"><%= product.brand %></p>
-            <p class="card-text"><%= product.description %></p>
-            <p class="card-text"><small class="text-muted">R$<%= product.price %></small></p>
-          </div>
-        </div>
-      <% end %>
-    </div>
+   <div class="cards">
+    <% @products.each do |product| %>
+     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <h4 class="card-title"><%= product.name %></h4>
+      <p class="card-text"><%= product.brand %></p>
+      <p class="card-text"><%= product.description %></p>
+      <p class="card-text"><h3 class="text-muted">R$<%= product.price %>0</h3></p>
+      <p></p>
+      <%= link_to 'Ver', product, class: 'btn btn-primary'  %>
+     </div>
+    <% end %>
+   </div>
+  <%= paginate @products %>
   </div>
-</div>
-
-
-
-<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-
-
-
 <%= link_to "Home", root_path %>
 
