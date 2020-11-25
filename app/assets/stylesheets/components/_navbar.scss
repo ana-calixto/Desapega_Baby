@@ -1,3 +1,6 @@
+.navbar {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .8);
+}
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -12,6 +15,15 @@
 }
 
 h3 {
-  margin-right: 550px;
+  margin-right: 400px;
   font-family: 'Gochi Hand';
+}
+
+.nav-link {
+  border-radius: 2px;
+  padding: 2px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .8);
+  margin-right: 2px;
+  font-family: 'Open Sans';
+  margin-top: 8px;
 }
