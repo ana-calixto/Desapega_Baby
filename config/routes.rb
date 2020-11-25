@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'products#index'
   resources :products do
     resources :deals, only: [:create]
   end
