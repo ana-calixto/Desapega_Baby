@@ -9,7 +9,11 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-
+    <%= cl_image_tag current_user.photo.key if current_user.photo %>
+    <%= f.input :photo, as: :file,
+                hint: "leave it blank if you don't want to change it",
+                required: false,
+                input_html: { multiple: false } %>
     <%= f.input :first_name,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
