@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :product_find, only: [:show, :edit, :update, :destroy] 
 
-
   def index
     @products = Product.all.where(available: true).page params[:page]
 
