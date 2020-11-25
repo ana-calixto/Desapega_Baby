@@ -1,10 +1,14 @@
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 180px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-top: 60px;
+  width: 800px;
+  margin-left: 130px
+
 }
 
 .card-product img {
@@ -17,6 +21,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  padding: 15px;
 }
 
 .card-product p {
@@ -31,4 +36,20 @@
   padding: 16px;
 }
 
+.card-product-infos {
+  padding: 10px;
+
+}
+
+.btn-show {
+  display: block;
+  margin-bottom: 10px;
+  margin-left: 140px;
+  color: gray;
+  background-color: #c2eadd;
+  padding: 10px;
+  font-family: 'Open Sans';
+  font-weight: bolder;
+  border-radius: 5px;
+}
 

@@ -8,7 +8,6 @@ class ProductsController < ApplicationController
     else
       @products = Product.where(available: true).page params[:page]
     end
-
   end
 
   def show
