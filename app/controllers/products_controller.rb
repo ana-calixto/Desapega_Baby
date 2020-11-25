@@ -1,10 +1,9 @@
 class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  before_action :product_find, only: [:show, :edit, :update, :destroy] 
+  before_action :product_find, only: [:show, :edit, :update, :destroy]
 
   def index
     @products = Product.all.where(available: true).page params[:page]
-
   end
 
   def show
@@ -51,7 +50,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  def product_params 
+  def product_params
     params.require(:product).permit(:name, :description, :brand, :price, photos: [])
   end
 end
