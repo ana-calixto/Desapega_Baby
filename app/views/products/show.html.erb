@@ -1,5 +1,7 @@
 <div class="card-product">
-  <%#= cl_image_tag @product.photos.first.key, height: 300, width: 400, class: 'card-img' %>
+
+  <%= cl_image_tag @product.photos.first.key, height: 300, width: 400, class: 'card-img' %>
+
   <div class="card-product-infos">
     <h4 class="card-title"><%= @product.name %></h4>
     <p class="card-text"><%= @product.brand %></p>
