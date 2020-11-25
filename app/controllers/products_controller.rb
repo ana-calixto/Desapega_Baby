@@ -3,7 +3,11 @@ class ProductsController < ApplicationController
   before_action :product_find, only: [:show, :edit, :update, :destroy]
 
   def index
-    @products = Product.all.where(available: true).page params[:page]
+    if params[:query].present?
+      @products = Product.where("name ILIKE ?", "%#{params[:query]}%").page params[:page]
+    else
+      @products = Product.where(available: true).page params[:page]
+    end
   end
 
   def show

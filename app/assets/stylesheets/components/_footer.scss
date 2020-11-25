@@ -1,5 +1,5 @@
 .footer {
-  position: fixed;
+  position: relative;
   left: 0;
   right: 0;
   bottom: 0;
@@ -12,7 +12,7 @@
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .8);
-  z-index: 10;
+  margin-top: 10px;
 }
 .footer-links {
   display: flex;
