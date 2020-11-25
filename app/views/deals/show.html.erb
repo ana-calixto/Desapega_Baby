@@ -1,10 +1,9 @@
-<div>
-  <h1>Confirmação de Compra</h1>
-  <h2>Parabéns, você comprou:</h2>
-  <div class="card-purchase">
+<h2>Confirmação de Compra</h2>
+<p>Parabéns, você comprou:<p>
+<div class="card-purchase">
   <%=@deal.product.name%>
   <%=@deal.product.description%>
   <%=@deal.product.price%>
-  </div>
 </div>
+
 <%= link_to "Voltar para Produtos", products_path, class: 'btn btn-primary' %>
