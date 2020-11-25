@@ -1,34 +1,17 @@
-<div class="container-card">
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-        <div class="col-md-4">
 
-        <!-- <div class="col-md-4">
-
-          <%#= cl_image_tag @product.photos.first.key, height: 300, width: 400, class: 'card-img' %>
-          <img src="..." class="card-img" alt="...">
-        </div> -->
-        <div class="col-md-8">
-          <div class="card-body">
-            <h4 class="card-title"><%= @product.name %></h4>
-            <p class="card-text"><%= @product.brand %></p>
-            <p class="card-text"><%= @product.description %></p>
-            <p class="card-text"><h3 class="text-muted">R$<%= @product.price %>0</h3></p>
-          </div>
-
-          <% if @product.owner != current_user %>
-          <%= link_to 'Comprar', product_deals_path(@product), method: :post, class: 'btn btn-primary' %>
-          <% end %>
-
-          <%= link_to "Voltar", :back, class: 'btn btn-primary' %>
-        </div>
-    </div>
+<div class="card-product">
+  <%#= cl_image_tag @product.photos.first.key, height: 300, width: 400, class: 'card-img' %>
+  <div class="card-product-infos">
+    <h4 class="card-title"><%= @product.name %></h4>
+    <p class="card-text"><%= @product.brand %></p>
+    <p class="card-text"><%= @product.description %></p>
+    <p class="card-text"><h3 class="text-muted">R$<%= @product.price %>0</h3></p>
   </div>
 </div>
 
-
-<%= link_to "Home", root_path, class: 'btn btn-primary' %>
-
+<% if @product.owner != current_user %>
+  <%= link_to 'Comprar', product_deals_path(@product), method: :post, class: 'btn btn-primary' %>
+<% end %>
 <% if @product.owner == current_user %>
 <%= link_to "Editar", edit_product_path, class: 'btn btn-primary' %>
 <% end %>
@@ -38,4 +21,6 @@
 <%= link_to "Excluir", @product, method: :delete, data: { confirm: 'Tem certeza que deseja excluir esse produto?' }, class: 'btn btn-primary' %>
 <% end %>
 
-<p> <%= link_to "Voltar", :back %>  </p>
+<%= link_to "Back", :back, class: 'btn btn-primary' %>
+
+
