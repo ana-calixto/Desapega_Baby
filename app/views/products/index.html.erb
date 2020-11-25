@@ -1,15 +1,18 @@
 <div class="container">
    <div class="cards">
     <% @products.each do |product| %>
-     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_tag product.photos %>)">
+     <div class="card-category">
+      <%= cl_image_tag product.photos.first.key, height: 300, width: 400, class: 'card-img' %>
       <h4 class="card-title"><%= product.name %></h4>
       <p class="card-text"><%= product.brand %></p>
-      <p class="card-text"><%= product.description %></p>
-      <p class="card-text"><h3 class="text-muted">R$<%= product.price %>0</h3></p>
-      <p></p>
-      <%= link_to 'Ver', product, class: 'btn btn-primary'  %>
+      <!-- <p class="card-text"><%= product.description %></p> -->
+      <div class="price">
+        <p class="card-text"><h3 class="text-muted">R$<%= product.price %>0</h3></p>
+        <%= link_to 'Visualizar', product, class: 'btn'  %>
+      </div>
      </div>
     <% end %>
    </div>
   <%= paginate @products %>
 </div>
+

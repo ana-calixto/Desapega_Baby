@@ -6,15 +6,16 @@
 
 .cards {
   display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
   grid-gap: 16px;
   width: 70%;
 }
 
 .card-category {
   margin-top: 15px;
-  border-radius: 10px;
+  border-radius: 0px;
+  // max-height: 200px;
 }
 
 .product-new {
@@ -22,38 +23,63 @@
   margin-top: 20px;
 }
 
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
+.card-category {
+  background-color: white;
+  text-align: center;
+  color: rgba(0, 0, 0, .9);
+  h3 {
+  color: white;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .8);
   }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
+.btn {
+  box-shadow: 1px 1px 3px rgba(255, 255, 255, 1);
+  font-weight: bolder;
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
+.price {
+  // position: absolute;
+  // bottom: 0px;
+  // margin: 0px;
+  // padding: 0px;
 }
 
-// Large devices (desktops, 992px and up)
-// @media (min-width: 992px) {
+.card-text {
+  margin: 0px;
+}
+// @media (min-width: 100px) and (max-width: 575px) {
 //   .cards {
-//     // grid-template-columns: 1fr 1fr 1fr;
+//     grid-template-columns: 1fr;
+//   }
+// }
+
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+//   .cards {
+//     grid-template-columns: 1fr;
+//   }
+// }
+
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+//   .cards {
 //     grid-template-columns: 1fr 1fr;
 //   }
 // }
 
-// // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) {
-//   .cards {
-//     // grid-template-columns: 1fr 1fr 1fr;
-//     grid-template-columns: 1fr 1fr;
-//   }
-// }
+// // Large devices (desktops, 992px and up)
+// // @media (min-width: 992px) {
+// //   .cards {
+// //     // grid-template-columns: 1fr 1fr 1fr;
+// //     grid-template-columns: 1fr 1fr;
+// //   }
+// // }
+
+// // // Extra large devices (large desktops, 1200px and up)
+// // @media (min-width: 1200px) {
+// //   .cards {
+// //     // grid-template-columns: 1fr 1fr 1fr;
+// //     grid-template-columns: 1fr 1fr;
+// //   }
+// // }
