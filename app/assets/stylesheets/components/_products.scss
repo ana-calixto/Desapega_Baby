@@ -1,8 +1,10 @@
 .container {
   font-family: 'Open Sans';
-  color: white;
+  color: gray;
   border-radius: 10px;
 }
+
+
 
 .cards {
   display: grid;
@@ -13,6 +15,11 @@
 .card-category {
   margin-top: 15px;
   border-radius: 10px;
+}
+
+.product-new {
+  font-size: 30px;
+  margin-top: 20px;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
