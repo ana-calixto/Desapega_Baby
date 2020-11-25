@@ -4,7 +4,9 @@
      <div class="card-category">
       <%= cl_image_tag product.photos.first.key, height: 300, width: 400, class: 'card-img' %>
       <h4 class="card-title"><%= product.name %></h4>
-      <p class="card-text"><%= product.brand %></p>
+      <h6 class="card-text"><%= product.brand %></h6>
+      <h6 class="card-text">Vendedor: <%= product.owner.first_name %></h6>
+
 
       <!-- <p class="card-text"><%= product.description %></p> -->
       <div class="price">
