@@ -10,6 +10,11 @@
   box-shadow: 1px 1px 3px rgba(0, 0, 0, .8);
 }
 
-// .form-form {
-//   text-align: center;
-// }
+
+
+.form-group {
+  text-align: center;
+  .form-control-file {
+    padding-left: 20vw;
+  }
+}
