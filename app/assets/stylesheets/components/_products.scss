@@ -7,10 +7,10 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  position: relative;
-  justify-content: space-between;
+  justify-content: center;
   grid-gap: 16px;
   width: 70%;
+  margin: auto;
 }
 
 
@@ -38,13 +38,6 @@
   background-color: $info;
   margin-bottom: 5px;
   margin-left: 20px;
-}
-
-.price {
-  // position: absolute;
-  // bottom: 0px;
-  // margin: 0px;
-  // padding: 0px;
 }
 
 .card-text {
