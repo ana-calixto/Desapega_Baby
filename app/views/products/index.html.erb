@@ -1,19 +1,25 @@
 <div class="container">
    <div class="cards">
     <% @products.each do |product| %>
+      <%= link_to product_path(product) do %>
      <div class="card-category">
       <%= cl_image_tag product.photos.first.key, height: 300, width: 400, class: 'card-img' %>
-      <h4 class="card-title"><%= product.name %></h4>
-      <h6 class="card-text"><%= product.brand %></h6>
-      <h6 class="card-text">Vendedor: <%= product.owner.first_name %></h6>
-      <div class="price">
-        <p class="card-text"><h3 class="text-muted">R$<%= product.price %>0</h3></p>
-        <%= link_to 'Visualizar', product, class: 'btn'  %>
-        <% unless product.owner == current_user %>
-          <%= link_to 'Comprar', product_deals_path(product), method: :post, class: 'btn' %>
-        <% end %>
+      <div class="product-info">
+        <div class="product-name">
+          <span class="card-title"><%= product.name %></span>
+          
+          <p class="card-text"><%= product.brand %></p>
+        </div>
+        <div class="price" style="padding-top: 1rem;">
+          <p class="card-text"><h5 class="text-muted">R$<%= product.price %>0</h5></p>
+          <%#= link_to 'Visualizar', product, class: 'btn'  %>
+          <% unless product.owner == current_user %>
+            <%#=link_to 'Comprar', product_deals_path(product), method: :post, class: 'btn' %>
+          <% end %>
+        </div>
       </div>
      </div>
+     <% end %>
     <% end %>
    </div>
   <%= paginate @products %>
