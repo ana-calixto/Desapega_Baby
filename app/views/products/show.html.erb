@@ -26,7 +26,14 @@
       <%= link_to "Voltar", :back, class: 'btn-show' %>
       </div>
   </div>
+<div class="similar-produtos">
+  <% @similar_products.each do |product| %>
+  <%= product.name %>
+  <% end  %>
+</div>
+
 </div>
 
 
 <%= render 'shared/footer' %>
+

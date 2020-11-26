@@ -4,13 +4,14 @@ class ProductsController < ApplicationController
 
   def index
     if params[:query].present?
-      @products = Product.where("name ILIKE ?", "%#{params[:query]}%").page params[:page]
+      @products = Product.where("name ILIKE ? OR description ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%").page params[:page]
     else
       @products = Product.where(available: true).page params[:page]
     end
   end
 
   def show
+    @similar_products = Product.where("name ILIKE ? AND id <> ?", "%#{@product.name}%", "#{@product.id}").first(3)
   end
 
   def new
