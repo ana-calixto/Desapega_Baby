@@ -2,8 +2,18 @@
   <div class="row py-4">
     <div class="col">
       <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @deal.product.name %></strong> for <strong><%= humanized_money_with_symbol @deal.amount %></strong></p>
+      <p>Purchase of <strong><%= @deal.product.name %></strong> for <strong><%= number_with_precision(@deal.amount, precision: 2) %></strong></p>
       <button id="pay" class="btn btn-primary">Pay</button>
-      </div>
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+            sessionId: '<%= @deal.checkout_session_id %>'
+          });
+        });
+      </script>
+    </div>
   </div>
 </div>
