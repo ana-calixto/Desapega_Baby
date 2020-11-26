@@ -1,9 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="d-inline-flex">
-  <%= link_to "#", class: "navbar-brand" do %>
-     <%= image_tag "pipa-logo.png" %>
-  <% end %>
-  <h3>Desapega Baby</h3>
+    <%= link_to products_path, class: "navbar-brand" do %>
+      <%= image_tag "pipa-logo.png" %>
+    <% end %>
+    <h3>Desapega Baby</h3>
   </div>
   <form class="example simple_form" action="/" method="get" novalidate="novalidate">
     <input type="text" placeholder="Buscar" type="text" name="query" id="search_query" >
@@ -17,18 +17,26 @@
       <li class="nav-item active">
         <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
-        <%= link_to "Comprar", products_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Vender", new_product_path, class: "nav-link" %>
-      </li>
+      <% unless current_user %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+      <% if current_user %>
+        <li class="nav-item">
+          <%= link_to "Vender", new_product_path, class: "nav-link" %>
+        </li>
+      <% end %>
+      <% unless current_user %>
       <li class="nav-item active">
-        <%= link_to "Cadastre-se", new_user_password_path, class: "nav-link" %>
+        <%= link_to "Cadastre-se", new_user_registration_path, class: "nav-link" %>
       </li>
+      <% end %>
+      <% if current_user %>
       <li class="nav-item">
           <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "nav-link" %>
       </li>
+      <% end %>
       <li class="nav-item dropdown">
           <% if current_user && current_user.photo.attached? %>
             <div>
