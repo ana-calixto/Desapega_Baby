@@ -8,15 +8,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   position: relative;
+  justify-content: space-between;
   grid-gap: 16px;
   width: 70%;
 }
 
-.card-category {
-  margin-top: 15px;
-  border-radius: 0px;
-  // max-height: 200px;
-}
 
 .product-new {
   font-size: 30px;
@@ -24,6 +20,8 @@
 }
 
 .card-category {
+  margin-top: 15px;
+  border-radius: 0px;
   background-color: white;
   text-align: center;
   color: rgba(0, 0, 0, .9);
@@ -34,8 +32,12 @@
 }
 
 .btn {
-  box-shadow: 1px 1px 3px rgba(255, 255, 255, 1);
+  color: gray;
+  box-shadow: 1px 1px 3px $info;
   font-weight: bolder;
+  background-color: $info;
+  margin-bottom: 5px;
+  margin-left: 20px;
 }
 
 .price {
