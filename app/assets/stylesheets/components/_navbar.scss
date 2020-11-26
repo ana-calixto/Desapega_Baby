@@ -16,7 +16,6 @@
 }
 
 h3 {
-  // margin-right: 400px;
   font-family: 'Gochi Hand';
   margin-top: 5px;
 }
@@ -24,9 +23,7 @@ h3 {
 .nav-link {
   border-radius: 2px;
   padding: 2px;
-  // box-shadow: 1px 1px 3px rgba(0, 0, 0, .8);
   margin-right: 2px;
-  // font-family: 'Open Sans';
   margin-top: 8px;
 }
 .search-form-control {
@@ -41,7 +38,7 @@ h3 {
 }
 .search-form-control .form-control {
   height: 2.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
   border: 1px solid #E7E7E7;
   margin-bottom: -12px;
 }
@@ -53,3 +50,16 @@ h3 {
 .form-control {
   border-radius: 10px;
 }
+
+#btn-search {
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  margin-top: -5px;
+}
+
+#search_query {
+  margin: 0;
+  width: 300px;
+  height: 20px;
+}
+
