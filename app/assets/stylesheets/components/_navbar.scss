@@ -41,7 +41,7 @@ form.example input[type=text] {
   width: 80%;
   background: white;
   border-radius: 5px;
-  border: 0.1rem solid black;
+  border: 0.1rem solid #c2eadd;
 }
 
 /* Style the submit button */
@@ -55,8 +55,8 @@ form.example button {
   // border-left: none; /* Prevent double borders */
   cursor: pointer;
   border-radius: 5px;
-  margin-left: 6px;
-  border: 0.1rem solid black;
+
+  border: 0.1rem solid #c2eadd;
 }
 
 form.example {
