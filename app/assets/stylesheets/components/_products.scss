@@ -45,6 +45,7 @@
   color: rgba(0, 0, 0, .9);
   h3 {
   color: white;
+  text-decoration: none;
   }
 }
 
@@ -60,6 +61,8 @@
 .card-text {
   margin: 0px;
 }
+
+
 // @media (min-width: 100px) and (max-width: 575px) {
 //   .cards {
 //     grid-template-columns: 1fr;

@@ -1,37 +1,54 @@
 <div class="container">
-  <div class="card-product ">
-    <%= cl_image_tag @product.photos.first.key, height: 300, width: 400, class: 'card-img' if @product.photos.attached?%>
-    <div class="card-product-infos">
-      <h4 class="card-title"><%= @product.name %></h4>
-      <h5 class="card-text"><%= @product.brand %></h5>
-      <h6 class="card-text">Vendedor: <%= @product.owner.first_name %></h6>
 
-      <h6 class="card-text"><%= @product.description %></p>
-      <p class="card-text"><h4 class="text-muted">R$<%= @product.price %>0</h4></h6>
+  <div class="all-cards">
+
+    <div class="img-left">
+    <%= cl_image_tag @product.photos.first.key, class: "product-cl-img" if @product.photos.attached? %>
     </div>
 
-    <div class="buttons">
+    <div class="cards-right">  
+      <div class="product-info">
+        <h4><%= @product.name %></h4>
+        <h5><%= @product.brand %></h5>
+        
+
+        <h6><%= @product.description %></h6>
+        <h6>R$<%= @product.price %></h6>
+      </div>
+      
       <% if @product.owner != current_user %>
-        <%= link_to 'Comprar', product_deals_path(@product), method: :post, class: 'btn-show' %>
+        <%= link_to 'Comprar', product_deals_path(@product), method: :post, class: 'btn btn-primary btn-block' %>
       <% end %>
-
+      
       <% if @product.owner == current_user %>
-        <%= link_to "Editar", edit_product_path, class: 'btn-show' %>
+        <%= link_to "Editar", edit_product_path, class: 'btn btn-primary btn-show btn-block' %>
       <% end %>
-
 
       <% if @product.owner == current_user%>
-        <%= link_to "Excluir", @product, method: :delete, data: { confirm: 'Tem certeza que deseja excluir esse produto?' }, class: 'btn-show' %>
+        <%= link_to "Excluir", @product, method: :delete, data: { confirm: 'Tem certeza que deseja excluir esse produto?' }, class: 'btn btn-primary btn-show btn-block' %>
       <% end %>
-      <%= link_to "Voltar", :back, class: 'btn-show' %>
-      </div>
-  </div>
-<div class="similar-produtos">
-  <% @similar_products.each do |product| %>
-  <%= product.name %>
-  <% end  %>
-</div>
+      <%= link_to "Voltar", :back, class: 'btn btn-primary btn-show btn-block' %>
 
+     
+      <div class="card-vendor">
+        <%= image_tag @product.owner.photo, class: "avatar-bordered" %> 
+        <div class="vendor">
+          <span>Vendido por: <%= @product.owner.first_name %></span>
+          <p class="vendor-line">Veja o perfil e as avaliacoes de <%= @product.owner.first_name %></p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div> 
+
+  <div class="similar-produtos">
+    <% @similar_products.each do |product| %>
+      <%= cl_image_tag product.photos.first.key, height: 300, width: 400 %>
+      <%= product.name %>
+    <% end  %>
+  </div>
 </div>
 
 
