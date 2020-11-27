@@ -29,7 +29,7 @@
         </div>
         <div class="middle">
           <div class="progress">
-             <div class="progress-bar" role="progressbar" style="width: <%= (@reviews.where(raiting: 5).count / @reviews.count) * 100 %>%" aria-valuenow= "<%= (@reviews.where(raiting: 5).count / @reviews.count) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
+             <div class="progress-bar" role="progressbar" style="width: <%= (@fivestars.count / @reviews.count.to_f) * 100 %>%" aria-valuenow= "<%= (@reviews.where(raiting: 5).count / @reviews.count) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
           </div>
         </div>
         <div class="side right">
@@ -41,7 +41,7 @@
         <div class="middle">
           <div class="progress">
             <div class="progress">
-               <div class="progress-bar" role="progressbar" style="width: <%= (@reviews.where(raiting: 4).count / @reviews.count) * 100 %>%" aria-valuenow= "<%= (@reviews.where(raiting: 4).count / @reviews.count) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
+               <div class="progress-bar" role="progressbar" style="width: <%= (@reviews.where(raiting: 4).count / @reviews.count.to_f) * 100 %>%" aria-valuenow= "<%= (@reviews.where(raiting: 4).count / @reviews.count) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
               </div>
           </div>
         </div>
@@ -53,7 +53,7 @@
         </div>
         <div class="middle">
             <div class="progress">
-               <div class="progress-bar" role="progressbar" style="width: <%= (@reviews.where(raiting: 3).count / @reviews.count) * 100 %>%" aria-valuenow= "<%= (@reviews.where(raiting: 3).count / @reviews.count) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
+               <div class="progress-bar" role="progressbar" style="width: <%= (@reviews.where(raiting: 3).count / @reviews.count.to_f) * 100 %>%" aria-valuenow= "<%= (@reviews.where(raiting: 3).count / @reviews.count) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
               </div>
           </div>
         <div class="side right">
@@ -64,7 +64,7 @@
         </div>
         <div class="middle">
           <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: <%= (@reviews.where(raiting: 3).count / @reviews.count) * 100 %>%" aria-valuenow= "<%= (@reviews.where(raiting: 3).count / @reviews.count) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar" role="progressbar" style="width: <%= (@reviews.where(raiting: 2).count / @reviews.count.to_f) * 100 %>%" aria-valuenow= "<%= (@reviews.where(raiting: 2).count / @reviews.count.to_f) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
            </div>
         </div>
         <div class="side right">
@@ -75,7 +75,7 @@
         </div>
         <div class="middle">
         <div class="progress">
-           <div class="progress-bar" role="progressbar" style="width: <%= (@reviews.where(raiting: 1).count / @reviews.count) * 100 %>%" aria-valuenow= "<%= (@reviews.where(raiting: 1).count / @reviews.count) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
+           <div class="progress-bar" role="progressbar" style="width: <%= (@reviews.where(raiting: 1).count / @reviews.count) * 100 %>%" aria-valuenow= "<%= (@reviews.where(raiting: 1).count / @reviews.count.to_f) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
           </div>
       </div>
         <div class="side right">
