@@ -40,8 +40,8 @@
         </div>
       </div>
       </div>
-      <% link_to 'Perfil', profile_user_path(@product.owner), class: 'btn btn-primary' %>
-      <% link_to 'Perfil', new_user_review_path(@product.owner), class: 'btn btn-primary' %>
+      <%= link_to 'Perfil', profile_path(@product.owner), class: 'btn btn-primary' %>
+      <%# link_to 'Perfil', new_user_review_path(@product.owner), class: 'btn btn-primary' %>
     </div>
 
   </div>

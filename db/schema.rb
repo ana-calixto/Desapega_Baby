@@ -64,8 +64,10 @@ ActiveRecord::Schema.define(version: 2020_11_26_204856) do
     t.text "content"
     t.integer "raiting"
     t.bigint "user_id", null: false
+    t.bigint "owner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["owner_id"], name: "index_reviews_on_owner_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -90,4 +92,5 @@ ActiveRecord::Schema.define(version: 2020_11_26_204856) do
   add_foreign_key "deals", "users"
   add_foreign_key "products", "users"
   add_foreign_key "reviews", "users"
+  add_foreign_key "reviews", "users", column: "owner_id"
 end

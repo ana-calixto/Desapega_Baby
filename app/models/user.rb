@@ -7,4 +7,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one_attached :photo
   has_many :reviews, dependent: :destroy
+  has_many :received_reviews, class_name: "Review", foreign_key: "owner_id"
 end

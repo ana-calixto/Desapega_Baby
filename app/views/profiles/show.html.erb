@@ -2,21 +2,26 @@
   <div class="user-info">
     <div class="user-dados">
       <div class="username">
-        <%= image_tag @user_profile.photo, class: 'avatar' %>
-        <p><%= @user_profile.first_name %> <%= @user_profile.last_name %></p>
+        <%= image_tag @profile.photo, class: 'avatar' %>
+        <p><%= @profile.first_name %> <%= @profile.last_name %></p>
       </div>
-      <p>Email: <strong><%= @user_profile.email %></strong></p>
-      <p>Telefone: <%= @user_profile.phone_number %></p>
-      <p>cadastrado em: <%= @user_profile.created_at.strftime("%Y-%m-%d") %></p>
+      <p>Email: <strong><%= @profile.email %></strong></p>
+      <p>Telefone: <%= @profile.phone_number %></p>
+      <p>cadastrado em: <%= @profile.created_at.strftime("%Y-%m-%d") %></p>
     </div>
-    <div class="raiting">
-      <span class="heading">Avaliações do vendedor:</span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star"></span>
-      <p><%= @raiting %> baseado em <%= @user_profile.reviews.count  %> avaliações.</p>
+      <% if @reviews.count == 0 %>
+      <div class="sem-avaliacoes">
+        <h2>Este vendedor não possui avaliações</h2>
+      </div>
+      <% else %>
+      <div class="raiting">
+        <span class="heading">Avaliações do vendedor:</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+      <p><%= @raiting %> baseado em <%= @reviews.count  %> avaliações.</p>
       <hr style="border: 5px solid #C2EADD">
       <div class="row">
         <div class="side">
@@ -24,63 +29,63 @@
         </div>
         <div class="middle">
           <div class="progress">
-             <div class="progress-bar" role="progressbar" style="width: <%= (@user_profile.reviews.where(raiting: 5).count / @user_profile.reviews.count) * 100 %>%" aria-valuenow= "<%= (@user_profile.reviews.where(raiting: 5).count / @user_profile.reviews.count) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
+             <div class="progress-bar" role="progressbar" style="width: <%= (@reviews.where(raiting: 5).count / @reviews.count) * 100 %>%" aria-valuenow= "<%= (@reviews.where(raiting: 5).count / @reviews.count) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
           </div>
         </div>
         <div class="side right">
-          <div><%= @user_profile.reviews.where(raiting: 5).count %></div>
+          <div><%= @reviews.where(raiting: 5).count %></div>
         </div>
         <div class="side">
           <div>4 Estrelas</div>
         </div>
         <div class="middle">
           <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: <%= (@user_profile.reviews.where(raiting: 4).count / @user_profile.reviews.count) * 100 %>%" aria-valuenow="<%= (@user_profile.reviews.where(raiting: 4).count / @user_profile.reviews.count) * 100 %>" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress">
+               <div class="progress-bar" role="progressbar" style="width: <%= (@reviews.where(raiting: 4).count / @reviews.count) * 100 %>%" aria-valuenow= "<%= (@reviews.where(raiting: 4).count / @reviews.count) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
           </div>
         </div>
         <div class="side right">
-          <div><%= @user_profile.reviews.where(raiting: 4).count %></div>
+          <div><%= @reviews.where(raiting: 4).count %></div>
         </div>
         <div class="side">
           <div>3 Estrelas</div>
         </div>
         <div class="middle">
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: <%= (@user_profile.reviews.where(raiting: 3).count / @user_profile.reviews.count) * 100 %>%" aria-valuenow="<%= (@user_profile.reviews.where(raiting: 3).count / @user_profile.reviews.count) * 100 %>" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress">
+               <div class="progress-bar" role="progressbar" style="width: <%= (@reviews.where(raiting: 3).count / @reviews.count) * 100 %>%" aria-valuenow= "<%= (@reviews.where(raiting: 3).count / @reviews.count) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
           </div>
-        </div>
         <div class="side right">
-          <div><%= @user_profile.reviews.where(raiting: 3).count %></div>
+          <div><%= @reviews.where(raiting: 3).count %></div>
         </div>
         <div class="side">
           <div>2 Estrelas</div>
         </div>
         <div class="middle">
           <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: <%= (@user_profile.reviews.where(raiting: 2).count / @user_profile.reviews.count) * 100 %>%" aria-valuenow="<%= (@user_profile.reviews.where(raiting: 2).count / @user_profile.reviews.count) * 100 %>" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
+            <div class="progress-bar" role="progressbar" style="width: <%= (@reviews.where(raiting: 3).count / @reviews.count) * 100 %>%" aria-valuenow= "<%= (@reviews.where(raiting: 3).count / @reviews.count) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
+           </div>
         </div>
         <div class="side right">
-          <div><%= @user_profile.reviews.where(raiting: 2).count %></div>
+          <div><%= @reviews.where(raiting: 2).count %></div>
         </div>
         <div class="side">
           <div>1 Estrela</div>
         </div>
         <div class="middle">
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: <%= (@user_profile.reviews.where(raiting: 2).count / @user_profile.reviews.count) * 100 %>%" aria-valuenow="<%= (@user_profile.reviews.where(raiting: 2).count / @user_profile.reviews.count) * 100 %>" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress">
+           <div class="progress-bar" role="progressbar" style="width: <%= (@reviews.where(raiting: 1).count / @reviews.count) * 100 %>%" aria-valuenow= "<%= (@reviews.where(raiting: 1).count / @reviews.count) * 100 %> " aria-valuemin="0" aria-valuemax="100"></div>
           </div>
-        </div>
+      </div>
         <div class="side right">
-          <div><%= @user_profile.reviews.where(raiting: 1).count %></div>
+          <div><%= @reviews.where(raiting: 1).count %></div>
         </div>
       </div>
     </div>
   </div>
-
-
   <div class="card-reviews">
-    <% @user_profile.reviews.each do |review| %>
+    <% @reviews.each do |review| %>
       <div class="individual-review">
         <div class="image-review">
           <p><%= image_tag review.user.photo, width: '20px', height: '20px', class: 'avatar' %></p>
@@ -96,6 +101,7 @@
         </div>
       </div>
     <% end %>
+  <% end %>
   </div>
 </div>
 

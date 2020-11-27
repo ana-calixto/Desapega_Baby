@@ -1,18 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root to: 'products#index'
+
   resources :products do
     resources :deals, only: [:create]
   end
 
   resources :deals, only: [:show]
 
-  resources :profiles do
-    resources :users, only: [ :show ]
-  end
-
-  resources :users do
-    resources :reviews, only: [ :new, :create, :edit, :show ]
+  resources :profiles, only: [:show] do
+    resources :reviews, shalow: true
   end
 
   resources :charges
