@@ -1,15 +1,16 @@
 <div class="container">
-  <h2>Confirmação de Compra</h2>
-    <h4>Parabéns <strong> <%= current_user.first_name %></strong>! Você comprou de <strong> <%= @deal.product.owner.first_name.capitalize %></strong> o seguinte produto:<h4>
+  <h2 style="margin-top: 15px;">Confirmação de Compra</h2>
+    <h4 style="margin-top: 10px;">Parabéns <strong> <%= current_user.first_name %></strong>! Você comprou de <strong> <%= @deal.product.owner.first_name.capitalize %></strong> o seguinte produto:<h4>
       <div class="card-purchase info">
-        <div clas="img-deal">
-          <%= cl_image_tag @deal.product.photos.first.key, class: 'card-img mb-3 rounded' %>
+        <div clas="">
+          <%= cl_image_tag @deal.product.photos.first.key, class: 'img-deal' %>
             </div>
             <p> <strong> Item: </strong><%=@deal.product.name%> - <%=@deal.product.description%> </p>
            <p> <strong> Valor: </strong>R$<%=@deal.product.price%> </p>
+           <p> Clique <strong><%# link_to "aqui", new_review_path(@product.owner) %></strong> para avaliar este vendedor. </p>
         </div>
       <div>
-    <%= link_to "Continuar comprando", products_path, class: 'btn btn-primary ml-0 mt-5' %>
+    <%= link_to "Continuar comprando", products_path, class: 'btn btn-primary ml-0 mt-3' %>
   </div>
 </div>
 
