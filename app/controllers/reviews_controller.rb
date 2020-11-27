@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-
   def create
     @deal = Deal.find(params[:deal_id])
     @review = Review.new(review_params)
