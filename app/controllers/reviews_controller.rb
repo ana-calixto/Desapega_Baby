@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
   def new
     @owner = User.find(params[:profile_id])
     @review = Review.new
+    @profile = User.find(params[:profile_id])
   end
 
   def create

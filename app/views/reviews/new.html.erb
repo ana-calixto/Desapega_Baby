@@ -2,7 +2,7 @@
 <div class="container">
   <div class="container-form">
     <div class="form-inputs">
-      <%= simple_form_for @review do |f| %>
+      <%= simple_form_for [@profile, @review] do |f| %>
         <h2><%= @owner.first_name %> <%= @owner.last_name %></h2>
         <%= f.input :owner_id, input_html: {value: @owner.id}, as: :hidden %>
         <%= f.input :content, label: 'Avaliação:' %>

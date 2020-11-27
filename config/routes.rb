@@ -9,9 +9,8 @@ Rails.application.routes.draw do
 
   resources :deals, only: [:show]
 
-  resources :profiles, only: [:show] do
-    resources :reviews, shalow: true
-  end
+  resources :reviews, shalow: true
+
 
   resources :charges
   resources :deals, only: [:show] do
