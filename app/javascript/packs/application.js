@@ -26,18 +26,9 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-import { init_carossel } from '../components/init_carossel';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  init_carossel();
-  const mainNav = document.getElementById('js-menu');
-  const navBarToggle = document.getElementById('js-navbar-toggle');
-  if(navBarToggle) {
-    navBarToggle.addEventListener('click', function () {
-      mainNav.classList.toggle('active');
-    });
-  }
 });
 
