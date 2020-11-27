@@ -7,10 +7,11 @@ Rails.application.routes.draw do
     resources :deals, only: [:create]
   end
 
-  resources :deals, only: [:show]
+  resources :profiles, only: [:show]
 
-  resources :reviews, shalow: true
-
+  resources :deals, only: [:show] do
+    resources :reviews, only: [ :create]
+  end
 
   resources :charges
   resources :deals, only: [:show] do

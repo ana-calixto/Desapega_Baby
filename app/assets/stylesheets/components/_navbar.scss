@@ -1,6 +1,13 @@
 .navbar {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, .8);
   align-items: center;
+  h3 {
+    font-family: 'Gochi Hand';
+    margin-top: 5px;
+    a {
+      color: rgb(51, 43, 43);
+    }
+  }
 }
 .navbar-lewagon {
   justify-content: space-between;
@@ -15,13 +22,7 @@
   width: 40px;
 }
 
-h3 {
-  font-family: 'Gochi Hand';
-  margin-top: 5px;
-  a {
-    color: rgb(51, 43, 43);
-  }
-}
+
 
 li {
   font-family: 'Open Sans';

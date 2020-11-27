@@ -19,10 +19,15 @@
   margin-top: 20px;
 }
 
+.product-price {
+  display: flex;
+}
+
 .product-info {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0;
+  margin-right: 5px;
 }
 
 .product-name {

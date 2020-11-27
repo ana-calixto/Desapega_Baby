@@ -56,7 +56,10 @@
   padding-right: 15px;
 }
 
-
+.vendo-photo {
+  display: flex;
+  padding: 15px;
+}
 .vendor-line {
   display: flex;
 }
@@ -96,6 +99,7 @@
   justify-content: space-around;
   width: 200px;
   align-items: center;
+  padding: 10px;
 }
 
 .similar-product-foto {
