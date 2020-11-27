@@ -3,7 +3,7 @@
     <%= link_to products_path, class: "navbar-brand" do %>
       <%= image_tag "pipa-logo.png" %>
     <% end %>
-    <h3><%#= link_to "Desapega,Baby!", root_path %>Desapega Baby</h3>
+    <h3>Desapega Baby</h3>
   </div>
   <form class="example simple_form" action="/" method="get" novalidate="novalidate">
     <input type="text" placeholder="Buscar" type="text" name="query" id="search_query" >
@@ -14,17 +14,12 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <li class="nav-item active">
         <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
       <% unless current_user %>
         <li class="nav-item">
-          <%= link_to "Entrar", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-      <% if current_user %>
-        <li class="nav-item">
-          <%= link_to "Comprar", products_path, class: "nav-link" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
       <% if current_user %>
@@ -33,7 +28,7 @@
         </li>
       <% end %>
       <% unless current_user %>
-      <li class="nav-item">
+      <li class="nav-item active">
         <%= link_to "Cadastre-se", new_user_registration_path, class: "nav-link" %>
       </li>
       <% end %>

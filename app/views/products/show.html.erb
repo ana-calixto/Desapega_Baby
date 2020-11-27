@@ -13,28 +13,28 @@
         
 
         <h6><%= @product.description %></h6>
-        <h6>R$<%= @product.price %>0</h6>
+        <h6>R$<%= @product.price %></h6>
       </div>
       
       <% if @product.owner != current_user %>
-        <%= link_to 'Comprar', product_deals_path(@product), method: :post, class: 'btn btn-info btn-show btn-block' %>
+        <%= link_to 'Comprar', product_deals_path(@product), method: :post, class: 'btn btn-primary btn-block' %>
       <% end %>
       
       <% if @product.owner == current_user %>
-        <%= link_to "Editar", edit_product_path, class: 'btn btn-info btn-show btn-block' %>
+        <%= link_to "Editar", edit_product_path, class: 'btn btn-primary btn-show btn-block' %>
       <% end %>
 
       <% if @product.owner == current_user%>
-        <%= link_to "Excluir", @product, method: :delete, data: { confirm: 'Tem certeza que deseja excluir esse produto?' }, class: 'btn btn-info btn-show btn-block' %>
+        <%= link_to "Excluir", @product, method: :delete, data: { confirm: 'Tem certeza que deseja excluir esse produto?' }, class: 'btn btn-primary btn-show btn-block' %>
       <% end %>
-      <%#= link_to "Voltar", :back, class: 'btn btn-info btn-show btn-block' %>
+      <%= link_to "Voltar", :back, class: 'btn btn-primary btn-show btn-block' %>
 
      
       <div class="card-vendor">
-        <%= image_tag @product.owner.photo, class: "avatar-square" %> 
+        <%= image_tag @product.owner.photo, class: "avatar-bordered" %> 
         <div class="vendor">
-          <h6>Vendido por: <%= @product.owner.first_name %></h6>
-          <h6 class="vendor-line">Veja o perfil e as avaliacoes de <%= @product.owner.first_name %></h6>
+          <span>Vendido por: <%= @product.owner.first_name %></span>
+          <p class="vendor-line">Veja o perfil e as avaliacoes de <%= @product.owner.first_name %></p>
         </div>
       </div>
 
