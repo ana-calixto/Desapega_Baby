@@ -6,20 +6,18 @@
     <%= cl_image_tag @product.photos.first.key, class: "product-cl-img" if @product.photos.attached? %>
     </div>
 
-    <div class="cards-right">  
+    <div class="cards-right">
       <div class="product-info">
         <h4><%= @product.name %></h4>
         <h5><%= @product.brand %></h5>
-        
-
         <h6><%= @product.description %></h6>
-        <h6>R$<%= @product.price %></h6>
-      </div>
-      
+        <h6>R$<%= @product.price %>0</h6>
+
+
       <% if @product.owner != current_user %>
         <%= link_to 'Comprar', product_deals_path(@product), method: :post, class: 'btn btn-primary btn-block' %>
       <% end %>
-      
+
       <% if @product.owner == current_user %>
         <%= link_to "Editar", edit_product_path, class: 'btn btn-primary btn-show btn-block' %>
       <% end %>
@@ -29,24 +27,39 @@
       <% end %>
       <%= link_to "Voltar", :back, class: 'btn btn-primary btn-show btn-block' %>
 
-     
+
       <div class="card-vendor">
-        <%= image_tag @product.owner.photo, class: "avatar-bordered" %> 
+        <div class="informacoes-gerais">
+          <p>Veja o perfil e as avaliacoes de <%= @product.owner.first_name %></p>
+        </div>
+        <div class="informacoes-avatar">
+          <%= image_tag @product.owner.photo, class: "avatar-bordered" %>
+        </div>
         <div class="vendor">
-          <span>Vendido por: <%= @product.owner.first_name %></span>
-          <p class="vendor-line">Veja o perfil e as avaliacoes de <%= @product.owner.first_name %></p>
+          <span>Em breve o rating do vendedor</span>
         </div>
       </div>
-
+      </div>
+      <% link_to 'Perfil', profile_user_path(@product.owner), class: 'btn btn-primary' %>
+      <% link_to 'Perfil', new_user_review_path(@product.owner), class: 'btn btn-primary' %>
     </div>
 
+  </div>
 
-  </div> 
+  <div class="similar">
+    <p>Produtos Similares</p>
+  </div>
 
-  <div class="similar-produtos">
+  <div class="similar-product">
     <% @similar_products.each do |product| %>
-      <%= cl_image_tag product.photos.first.key, height: 300, width: 400 %>
-      <%= product.name %>
+      <div class="similar-product-foto">
+        <%= cl_image_tag product.photos.first.key, height: 200, width: 200 %>
+      </div>
+      <div class="similiar-product-name">
+        <%= product.name %>
+        R$<%= product.price %>0
+
+      </div>
     <% end  %>
   </div>
 </div>

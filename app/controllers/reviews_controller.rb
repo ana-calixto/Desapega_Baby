@@ -4,13 +4,13 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = Product.owner
     @review = Review.new
   end
 
   def create
     @review = Review.new(review_params)
-    @user = User.find(params[:user_id])
+    @user = Product.owner
     @review.user = @user
     @review.save
     # Redireciona pro perfil do vendedor

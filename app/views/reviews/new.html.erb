@@ -1,10 +1,16 @@
 <div class="container">
-  <div class="container">
-    <%= simple_form_for [ @user, @review ] do |f| %>
-      <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-      <%= f.input :content, label: 'Avaliação:' %>
-      <%= f.input :raiting, label: 'Nota:' %>
-      <%= f.submit "Submit review", class: "btn btn-primary" %>
-    <% end %>
+  <div class="container-form">
+    <div class="form-inputs">
+      <%= simple_form_for [@product.owner, @review ] do |f| %>
+        <h2><%= @product.owner.first_name %> <%= @product.owner.last_name %></h2>
+        <%= f.input :content, label: 'Avaliação:' %>
+        <%= f.input :raiting, label: 'Nota:' %>
+    </div>
+    <div class="form-actions text-center">
+      <%= f.button :submit, "Enviar" %>
+      <%= link_to 'Lista de produtos', products_path, class: 'btn' %>
+    </div>
+  <% end %>
   </div>
 </div>
+<%= render 'shared/footer' %>
