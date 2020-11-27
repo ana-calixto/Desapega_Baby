@@ -10,7 +10,7 @@
 }
 .product-info {
   display: block;
-  // color: black;
+  
 }
 
 .product-cl-img {
@@ -25,8 +25,7 @@
 border: 0;
 }
 
-.card-vendor {
-  
+.card-vendor {  
   color: black;
   border: #dcdcdc 1px solid;
   display: flex;
@@ -38,20 +37,14 @@ border: 0;
   align-items: center;
   justify-content: start;
   font-family: "work sans";
-    h5 {
-      // font-weight: bolder;
-    }
-  }
+}
 
 .vendor {
   padding-top: 10px;
   padding-left: 10px;
-  // display: inline-block;
+
 }
 
-.vendor-line {
-  // padding: 10px;
-}
 
 .mini-info {
   display: flex;
