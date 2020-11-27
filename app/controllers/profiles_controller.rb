@@ -1,11 +1,15 @@
 class ProfilesController < ApplicationController
   def show
-    @user_profile = User.find(params[:id])
-    @reviews = @user_profile.reviews
-    total_raiting = 0
-    @reviews.each do |review|
-      total_raiting += review[:raiting]
+    @profile = User.find(params[:id])
+    @reviews = @profile.received_reviews
+    if @reviews.count == 0
+      redirect_to products_path
+    else
+      total_raiting = 0
+      @reviews.each do |review|
+        total_raiting += review[:raiting]
+      end
+      @raiting = total_raiting / @reviews.count
     end
-    @raiting = total_raiting / @reviews.count
   end
 end

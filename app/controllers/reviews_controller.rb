@@ -4,17 +4,16 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @owner = User.find(params[:profile_id])
     @review = Review.new
   end
 
   def create
     @review = Review.new(review_params)
-    @user = User.find(params[:user_id])
-    @review.user = @user
-    @review.save
+    @review.user = current_user
+    @review.save!
     # Redireciona pro perfil do vendedor
-    redirect_to profile_path(@user)
+    redirect_to profile_path(@review.owner)
   end
 
   def edit
@@ -33,7 +32,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:content, :raiting)
+    params.require(:review).permit(:content, :raiting, :owner_id)
   end
 
 end
