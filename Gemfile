@@ -25,6 +25,9 @@ gem 'kaminari'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# If you wish to rename your app
+gem "rename"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
